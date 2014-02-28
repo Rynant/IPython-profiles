@@ -1,13 +1,16 @@
-import re, urllib.request
+import re, sys
 
-# Get current temperature
-def stj_current_temperature():
-    conditions_url = 'http://www.fairbanksmuseum.org/weatherwidget.php'
-    current_conditions = urllib.request.urlopen(conditions_url).read()
-    temp = re.findall(r'Temperature: \d+\.\d', str(current_conditions))[0]
-    return float(re.findall(r'\d+\.\d', temp)[0])
+if sys.version > '3.2':
+	import urllib.request
 
-ct = stj_current_temperature
+	# Get current temperature
+	def stj_current_temperature():
+	    conditions_url = 'http://www.fairbanksmuseum.org/weatherwidget.php'
+	    current_conditions = urllib.request.urlopen(conditions_url).read()
+	    temp = re.findall(r'Temperature: \d+\.\d', str(current_conditions))[0]
+	    return float(re.findall(r'\d+\.\d', temp)[0])
+
+	ct = stj_current_temperature
 
 
 def sunset(day=0):

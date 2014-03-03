@@ -5,7 +5,8 @@ app = c.InteractiveShellApp
 # and merge it into the current one.
 load_subconfig('ipython_config.py', profile='default')
 
-c.PromptManager.in_template = r'{color.LightGreen}\u@\h{color.LightBlue}[{color.LightCyan}\w{color.LightBlue}]{color.Green}|\#\n{color.Green}| > '
+# c.PromptManager.in_template = r'{color.LightGreen}\u@\h{color.LightBlue}[{color.LightCyan}\w{color.LightBlue}]{color.Green}|\#\n{color.Green}| > '
+c.PromptManager.in_template = r'{color.LightBlue}[{color.LightCyan}\w{color.LightBlue}]{color.Green}|\#\n{color.Green}| > '
 c.PromptManager.in2_template = r'{color.Green}|{color.LightGreen}\D{color.Green}> '
 c.PromptManager.out_template = r'<\#> '
 
